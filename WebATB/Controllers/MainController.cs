@@ -34,19 +34,24 @@ public class MainController : Controller
         return View(model);
     }
 
-    [HttpGet] //метод для відображення сторінки створення нового користувача
+    [HttpGet]
     public IActionResult Create()
     {
         return View();
     }
+
     [HttpPost]
     public IActionResult Create(UserCreateModel model)
     {
-        if(!ModelState.IsValid)
+        if (model.UserPhoto == null || model.UserPhoto.Length == 0)
         {
-            return View(model);
-        } // Якщо модель валідна то дані будемо зберігати в 
-          // список і переходити на іншу сторінку
-        return RedirectToAction(nameof(Index));
+            ModelState.AddModelError("UserPhoto", "Виберіть фото будь ласка");
+        }
+
+        if (ModelState.IsValid)
+        {
+        }
+
+        return View(model);
     }
 }

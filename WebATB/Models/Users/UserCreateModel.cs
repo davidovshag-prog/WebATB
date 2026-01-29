@@ -12,4 +12,6 @@ public class UserCreateModel
     [Required(ErrorMessage = "Вкажіть ім'я")]
     public string Name { get; set; } = string.Empty;
 
+    [Required(ErrorMessage = "Виберіть фото будь ласка")]
+    public IFormFile UserPhoto { get; set; }
 }

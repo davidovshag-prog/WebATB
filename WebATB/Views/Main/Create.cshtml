@@ -19,5 +19,11 @@
         <span asp-validation-for="Name" class="text-danger"></span>
     </div>
 
+    <div class="mb-3">
+        <label asp-for="UserPhoto" class="form-label">Фото</label>
+        <input asp-for="UserPhoto" type="file" class="form-control">
+        <span asp-validation-for="UserPhoto" class="text-danger"></span>
+    </div>
+
     <button type="submit" class="btn btn-primary">Створити</button>
 </form>
